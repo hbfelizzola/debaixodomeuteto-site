@@ -1,0 +1,572 @@
+/* Debaixo do Meu Teto — site. Cores iguais às do app (src/constants/theme.ts, no repositório do app). */
+
+:root {
+  --texto: #1b1f1d;
+  --fundo: #f4f6f4;
+  --cartao: #ffffff;
+  --selecionado: #e2ede6;
+  --secundario: #5f6b65;
+  --borda: #e1e5e2;
+  --primaria: #1f7a4d;
+  --sobre-primaria: #ffffff;
+  --aviso: #a86a12;
+  --perigo: #c0392b;
+  --raio: 18px;
+  --largura: 1080px;
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --texto: #f1f4f2;
+    --fundo: #0f1311;
+    --cartao: #1a201d;
+    --selecionado: #22312a;
+    --secundario: #a3afa8;
+    --borda: #2a322e;
+    --primaria: #4fbf85;
+    --sobre-primaria: #0f1311;
+    --aviso: #f2b84b;
+    --perigo: #f07167;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 17px/1.6 var(--fonte);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--primaria);
+  text-underline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pular {
+  position: absolute;
+  left: -999px;
+}
+
+.pular:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 10;
+  background: var(--cartao);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Cabeçalho */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: color-mix(in srgb, var(--fundo) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.topo .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.logo img {
+  width: 34px;
+  height: 34px;
+}
+
+.topo nav {
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.topo nav a {
+  color: var(--secundario);
+  text-decoration: none;
+}
+
+.topo nav a:hover,
+.topo nav a[aria-current="page"] {
+  color: var(--texto);
+}
+
+.logo {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .topo nav {
+    gap: 14px;
+  }
+
+  .topo nav .opcional {
+    display: none;
+  }
+}
+
+/* Em telas bem estreitas o link de privacidade fica só no rodapé. */
+@media (max-width: 420px) {
+  .topo nav .estreito {
+    display: none;
+  }
+}
+
+/* Destaque */
+
+.destaque {
+  padding: 56px 0 24px;
+}
+
+.destaque .container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.destaque .lead {
+  font-size: 1.2rem;
+  color: var(--secundario);
+  max-width: 34em;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primaria);
+  background: var(--selecionado);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 820px) {
+  .destaque {
+    padding-top: 32px;
+  }
+
+  .destaque .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .destaque .celular {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+/* Moldura de celular para as capturas de tela */
+
+.celular {
+  position: relative;
+  border-radius: 46px;
+  padding: 10px;
+  background: #1b1f1d;
+  box-shadow: 0 30px 60px -20px rgb(15 19 17 / 0.35), 0 0 0 1px rgb(255 255 255 / 0.06) inset;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.celular img {
+  border-radius: 37px;
+  width: 100%;
+  aspect-ratio: 598 / 1300;
+  object-fit: cover;
+  background: var(--fundo);
+}
+
+/* Selos das lojas.
+ * TODO(lojas): troque por os selos oficiais (Apple: "Download on the App Store" em pt-BR,
+ * Google: "Disponível no Google Play") quando os links existirem; veja README.md. */
+
+.lojas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 12px;
+}
+
+.selo-loja {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+  padding: 9px 18px 9px 14px;
+  border-radius: 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #a6a6a6;
+  line-height: 1.15;
+}
+
+.selo-loja svg {
+  width: 26px;
+  height: 26px;
+  flex: none;
+}
+
+.selo-loja small {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+.selo-loja strong {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.selo-loja[aria-disabled="true"] {
+  cursor: default;
+}
+
+.aviso-lojas {
+  font-size: 0.9rem;
+  color: var(--secundario);
+}
+
+/* Faixa de garantias */
+
+.faixa {
+  padding: 24px 0 8px;
+}
+
+.faixa ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.faixa li {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: var(--secundario);
+}
+
+.faixa li strong {
+  display: block;
+  color: var(--texto);
+}
+
+@media (max-width: 820px) {
+  .faixa ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Recursos */
+
+.secao {
+  padding: 72px 0;
+}
+
+.secao-titulo {
+  max-width: 40em;
+  margin-bottom: 40px;
+}
+
+.secao-titulo p {
+  color: var(--secundario);
+  font-size: 1.1rem;
+}
+
+.recurso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.recurso + .recurso {
+  border-top: 1px solid var(--borda);
+}
+
+.recurso:nth-of-type(even) .recurso-texto {
+  order: 2;
+}
+
+.recurso .celular {
+  max-width: 290px;
+}
+
+.recurso-texto .numero {
+  font-weight: 800;
+  color: var(--primaria);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.recurso-texto ul {
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+.recurso-texto li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 820px) {
+  .recurso {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .recurso:nth-of-type(even) .recurso-texto {
+    order: 0;
+  }
+
+  .recurso .celular {
+    max-width: 260px;
+  }
+}
+
+.exemplo {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+.exemplo b {
+  color: var(--primaria);
+}
+
+/* Privacidade em destaque */
+
+.privado {
+  background: var(--primaria);
+  color: var(--sobre-primaria);
+  border-radius: 28px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
+.privado a {
+  color: inherit;
+}
+
+.privado ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.privado li {
+  background: rgb(255 255 255 / 0.12);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.privado .nota {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 820px) {
+  .privado {
+    grid-template-columns: 1fr;
+    padding: 32px 22px;
+    gap: 24px;
+  }
+}
+
+/* Perguntas */
+
+.perguntas details {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 0 18px;
+  margin-bottom: 10px;
+}
+
+.perguntas summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 16px 0;
+  list-style-position: outside;
+}
+
+.perguntas details p:last-child {
+  margin-bottom: 16px;
+}
+
+.chamada {
+  text-align: center;
+}
+
+.chamada .lojas {
+  justify-content: center;
+}
+
+/* Páginas de texto (privacidade, suporte) */
+
+.texto {
+  max-width: 760px;
+  padding: 48px 20px 72px;
+}
+
+.texto h2 {
+  font-size: 1.45rem;
+  margin-top: 2em;
+}
+
+.texto .atualizado {
+  color: var(--secundario);
+}
+
+.resumo {
+  background: var(--selecionado);
+  border-radius: var(--raio);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.resumo p:last-child,
+.resumo ul:last-child {
+  margin-bottom: 0;
+}
+
+.contato {
+  display: inline-block;
+  background: var(--primaria);
+  color: var(--sobre-primaria);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  margin: 8px 0 16px;
+}
+
+table.permissoes {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 8px 0 16px;
+}
+
+.permissoes th,
+.permissoes td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--borda);
+  vertical-align: top;
+}
+
+/* Rodapé */
+
+.rodape {
+  border-top: 1px solid var(--borda);
+  padding: 32px 0 48px;
+  color: var(--secundario);
+  font-size: 0.92rem;
+}
+
+.rodape .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  justify-content: space-between;
+}
+
+.rodape nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.rodape a {
+  color: var(--secundario);
+}

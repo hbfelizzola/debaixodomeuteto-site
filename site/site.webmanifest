@@ -1,0 +1,13 @@
+{
+  "name": "Debaixo do Meu Teto",
+  "short_name": "Meu Teto",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F4F6F4",
+  "theme_color": "#1F7A4D",
+  "icons": [
+    { "src": "/img/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/img/marca.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

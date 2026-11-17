@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Debaixo do Meu Teto: inventário da casa, garantia e manutenção</title>
+  <meta name="description" content="App de inventário da casa para iPhone e Android: cadastre seus bens por cômodo com foto e nota fiscal, veja a garantia com os 90 dias do CDC, receba lembretes de manutenção e gere um PDF para o seguro residencial. Sem conta, tudo no celular.">
+  <meta name="keywords" content="inventário da casa, inventário residencial, garantia, nota fiscal, NF-e, manutenção da casa, seguro residencial, boletim de ocorrência, CDC, app">
+  <link rel="canonical" href="https://debaixodomeuteto.hbfelizzola.de/">
+  <meta name="theme-color" content="#1F7A4D">
+  <link rel="icon" href="img/marca.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Debaixo do Meu Teto">
+  <meta property="og:title" content="Debaixo do Meu Teto: o inventário da sua casa, no seu celular">
+  <meta property="og:description" content="Bens por cômodo com foto e nota fiscal, garantia com os 90 dias do CDC, lembretes de manutenção e PDF para o seguro. Sem conta e sem nuvem.">
+  <meta property="og:url" content="https://debaixodomeuteto.hbfelizzola.de/">
+  <meta property="og:image" content="https://debaixodomeuteto.hbfelizzola.de/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tela de itens do app Debaixo do Meu Teto, com geladeira, bicicleta e ar-condicionado e o estado da garantia de cada um.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="estilo.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Debaixo do Meu Teto",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "inLanguage": "pt-BR",
+    "description": "Inventário da casa por cômodo com foto e nota fiscal, garantia com os 90 dias do CDC, lembretes de manutenção e PDF para seguro residencial ou boletim de ocorrência. Os dados ficam só no aparelho.",
+    "url": "https://debaixodomeuteto.hbfelizzola.de/",
+    "image": "https://debaixodomeuteto.hbfelizzola.de/img/og.jpg",
+    "screenshot": [
+      "https://debaixodomeuteto.hbfelizzola.de/img/telas/inicio.jpg",
+      "https://debaixodomeuteto.hbfelizzola.de/img/telas/itens.jpg",
+      "https://debaixodomeuteto.hbfelizzola.de/img/telas/garantia.jpg"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Preciso criar uma conta?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O app não tem cadastro, login nem servidor. Você abre e começa a usar."}},
+      {"@type": "Question", "name": "Como o app calcula a garantia?", "acceptedAnswer": {"@type": "Answer", "text": "Ele soma a garantia do fabricante aos 90 dias da garantia legal do Código de Defesa do Consumidor (arts. 26 e 50). Uma geladeira comprada em 10/10/2025 com 12 meses de garantia fica coberta até 08/01/2027."}},
+      {"@type": "Question", "name": "Funciona sem internet?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Tudo é guardado e calculado no próprio celular, inclusive os lembretes."}},
+      {"@type": "Question", "name": "E se eu trocar ou perder o celular?", "acceptedAnswer": {"@type": "Answer", "text": "Como os dados ficam só no aparelho, o app não faz cópia na nuvem. Exporte o PDF do inventário de vez em quando e guarde em um lugar seguro."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container">
+      <a class="logo" href="./">
+        <img src="img/marca.svg" alt="" width="34" height="34">
+        Debaixo do Meu Teto
+      </a>
+      <nav aria-label="Principal">
+        <a class="opcional" href="#recursos">Recursos</a>
+        <a class="opcional" href="#perguntas">Perguntas</a>
+        <a class="estreito" href="privacidade/">Privacidade</a>
+        <a href="suporte/">Suporte</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="destaque">
+      <div class="container">
+        <div>
+          <span class="etiqueta">Para iPhone e Android · feito para o Brasil</span>
+          <h1>O inventário da sua casa, no seu celular.</h1>
+          <p class="lead">
+            Cadastre seus bens por cômodo com foto e nota fiscal, saiba até quando vai cada garantia
+            (já com os 90 dias do Código de Defesa do Consumidor) e não esqueça mais a caixa d'água.
+            Sem conta e sem nuvem: tudo fica no aparelho.
+          </p>
+
+          <!-- TODO(lojas): os links das lojas ainda não existem. Quando o app for publicado,
+               troque href="#" pelos links reais, remova aria-disabled e o aviso "Em breve",
+               e use os selos oficiais (ver README.md). -->
+          <div class="lojas">
+            <a class="selo-loja" href="#" aria-disabled="true" data-loja="app-store" title="Em breve na App Store">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 3v13h10V5H7Zm5 14.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+              <span><small>Baixar na</small><strong>App Store</strong></span>
+            </a>
+            <a class="selo-loja" href="#" aria-disabled="true" data-loja="google-play" title="Em breve no Google Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5Z"/></svg>
+              <span><small>Disponível no</small><strong>Google Play</strong></span>
+            </a>
+          </div>
+          <p class="aviso-lojas">Em breve na App Store e no Google Play.</p>
+        </div>
+
+        <div class="celular">
+          <img src="img/telas/inicio.jpg" width="598" height="1300"
+               alt="Tela inicial do app: 9 itens, valor declarado de R$ 21.123,80, manutenções da semana e garantias acabando.">
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa" aria-label="Em resumo">
+      <div class="container">
+        <ul>
+          <li><strong>Sem conta</strong>Nada de cadastro, login ou senha.</li>
+          <li><strong>Sem servidor</strong>Seus dados não saem do celular.</li>
+          <li><strong>Funciona offline</strong>Não precisa de internet.</li>
+          <li><strong>Do jeito brasileiro</strong>R$, dd/mm/aaaa, NF-e e CDC.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" id="recursos">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2>Tudo o que mora debaixo do seu teto, organizado.</h2>
+          <p>
+            Na hora de acionar a garantia, o seguro ou registrar um boletim de ocorrência, ninguém lembra
+            o número de série da TV nem acha a nota da geladeira. O app guarda isso por você.
+          </p>
+        </div>
+
+        <article class="recurso">
+          <div class="recurso-texto">
+            <span class="numero">Itens por cômodo</span>
+            <h3>Cada coisa no seu lugar, com foto</h3>
+            <p>
+              Sala, cozinha, quarto, área de serviço, garagem… Cadastre cada bem com foto, marca, modelo,
+              número de série, valor pago em reais, data da compra e loja.
+            </p>
+            <ul>
+              <li>Busca por nome, marca ou modelo.</li>
+              <li>Filtro por cômodo e cômodos do seu jeito.</li>
+              <li>Valor total declarado na tela inicial.</li>
+            </ul>
+          </div>
+          <div class="celular">
+            <img src="img/telas/itens.jpg" width="598" height="1300" loading="lazy"
+                 alt="Lista de itens filtrável por cômodo, com foto, valor e o estado da garantia de cada um.">
+          </div>
+        </article>
+
+        <article class="recurso">
+          <div class="recurso-texto">
+            <span class="numero">Garantia e nota fiscal</span>
+            <h3>A garantia que você realmente tem</h3>
+            <p>
+              Pelo Código de Defesa do Consumidor, os 90 dias da garantia legal se somam à garantia do
+              fabricante (arts. 26 e 50). O app faz essa conta e avisa na tela inicial o que vence nos
+              próximos 60 dias.
+            </p>
+            <div class="exemplo">
+              Geladeira comprada em <b>10/10/2025</b> com 12 meses de garantia de fábrica:
+              o fabricante cobre até 10/10/2026, e com o CDC você está coberto até <b>08/01/2027</b>.
+            </div>
+            <ul>
+              <li>Foto da nota fiscal ou do cupom.</li>
+              <li>Chave de acesso da NF-e com conferência do dígito verificador.</li>
+            </ul>
+          </div>
+          <div class="celular">
+            <img src="img/telas/garantia.jpg" width="598" height="1300" loading="lazy"
+                 alt="Detalhe de uma geladeira: garantia do fabricante até 10/10/2026, com os 90 dias do CDC até 08/01/2027, e a chave de acesso da NF-e.">
+          </div>
+        </article>
+
+        <article class="recurso">
+          <div class="recurso-texto">
+            <span class="numero">Manutenção da casa</span>
+            <h3>Lembretes para o que a gente sempre esquece</h3>
+            <p>
+              Crie tarefas que se repetem (mensais, semestrais, anuais) e receba um lembrete às 9h do dia.
+              Marque como feita e a próxima data é calculada sozinha, com histórico.
+            </p>
+            <p>Já vem com sugestões típicas de casas e apartamentos no Brasil:</p>
+            <ul>
+              <li>Limpar a caixa d'água e a caixa de gordura.</li>
+              <li>Dedetização e limpeza de calhas e ralos.</li>
+              <li>Filtros do ar-condicionado e refil do purificador.</li>
+              <li>Validade da mangueira e registro do gás.</li>
+            </ul>
+          </div>
+          <div class="celular">
+            <img src="img/telas/sugestoes.jpg" width="598" height="1300" loading="lazy"
+                 alt="Lista de manutenção com dedetização e mangueira do gás, e sugestões para casas no Brasil como caixa de gordura e calhas.">
+          </div>
+        </article>
+
+        <article class="recurso">
+          <div class="recurso-texto">
+            <span class="numero">Seguro e ocorrência</span>
+            <h3>Um PDF pronto para a seguradora ou o B.O.</h3>
+            <p>
+              Em caso de roubo, incêndio ou alagamento, gere em segundos um PDF com todos os itens
+              agrupados por cômodo: fotos, marca, modelo, número de série, data, valor, chaves de NF-e e
+              totais.
+            </p>
+            <p>
+              Mande para a seguradora do seu seguro residencial, anexe ao boletim de ocorrência ou guarde
+              como cópia do inventário.
+            </p>
+          </div>
+          <div class="celular">
+            <img src="img/telas/ajustes.jpg" width="598" height="1300" loading="lazy"
+                 alt="Tela de ajustes com o botão Exportar inventário em PDF, a opção de incluir fotos e os lembretes.">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao" id="privacidade" style="padding-top: 0">
+      <div class="container">
+        <div class="privado">
+          <div>
+            <h2>Seus dados não saem do celular.</h2>
+            <p>
+              O Debaixo do Meu Teto não tem conta, servidor, anúncios nem rastreamento. O inventário,
+              as fotos e as notas ficam guardados no próprio aparelho, e só você decide se e com quem
+              compartilhar o PDF.
+            </p>
+            <p class="nota">
+              Por isso mesmo, o app não faz cópia na nuvem. Exporte o PDF de vez em quando e guarde em
+              um lugar seguro. <a href="privacidade/">Leia a política de privacidade</a>.
+            </p>
+          </div>
+          <ul>
+            <li><strong>Câmera e fotos</strong> só para anexar imagens dos itens e das notas.</li>
+            <li><strong>Notificações</strong> são lembretes locais, agendados no próprio aparelho.</li>
+            <li><strong>Nenhum dado coletado</strong> pelo desenvolvedor ou por terceiros.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao perguntas" id="perguntas" style="padding-top: 0">
+      <div class="container" style="max-width: 820px">
+        <h2>Perguntas frequentes</h2>
+
+        <details>
+          <summary>Preciso criar uma conta?</summary>
+          <p>Não. O app não tem cadastro, login nem servidor. Você abre e começa a usar.</p>
+        </details>
+        <details>
+          <summary>Como o app calcula a garantia?</summary>
+          <p>
+            Ele soma a garantia do fabricante aos 90 dias da garantia legal do Código de Defesa do Consumidor
+            (arts. 26 e 50). Se o item não tem garantia de fábrica, valem os 90 dias a partir da compra. Para
+            defeitos ocultos, o prazo legal conta a partir de quando o defeito aparece.
+          </p>
+        </details>
+        <details>
+          <summary>O app lê a nota fiscal sozinho?</summary>
+          <p>
+            Você fotografa a nota ou o cupom e digita (ou cola) a chave de acesso de 44 dígitos da NF-e. O app
+            confere o dígito verificador e avisa se algum número foi digitado errado.
+          </p>
+        </details>
+        <details>
+          <summary>Funciona sem internet?</summary>
+          <p>Sim. Tudo é guardado e calculado no próprio celular, inclusive os lembretes.</p>
+        </details>
+        <details>
+          <summary>E se eu trocar ou perder o celular?</summary>
+          <p>
+            Como os dados ficam só no aparelho, o app não faz cópia na nuvem nem transfere dados entre
+            celulares. Exporte o PDF do inventário de vez em quando e guarde em um lugar seguro.
+          </p>
+        </details>
+        <details>
+          <summary>Serve para seguro residencial?</summary>
+          <p>
+            Sim. O PDF lista os bens por cômodo, com valores, datas, números de série e chaves de NF-e, que é
+            o que as seguradoras costumam pedir para comprovar a existência e o valor dos itens. Confira com a
+            sua seguradora quais documentos ela exige.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="secao chamada" style="padding-top: 0">
+      <div class="container">
+        <h2>Comece pelo que mais vale.</h2>
+        <p>Geladeira, TV, notebook: cadastre com foto e nota fiscal e fique tranquilo.</p>
+        <!-- TODO(lojas): mesmos links do topo da página. -->
+        <div class="lojas">
+          <a class="selo-loja" href="#" aria-disabled="true" data-loja="app-store" title="Em breve na App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 3v13h10V5H7Zm5 14.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+            <span><small>Baixar na</small><strong>App Store</strong></span>
+          </a>
+          <a class="selo-loja" href="#" aria-disabled="true" data-loja="google-play" title="Em breve no Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5Z"/></svg>
+            <span><small>Disponível no</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+        <p class="aviso-lojas">Em breve na App Store e no Google Play.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <span>© 2026 Debaixo do Meu Teto</span>
+      <nav aria-label="Rodapé">
+        <a href="privacidade/">Política de privacidade</a>
+        <a href="suporte/">Suporte</a>
+        <a href="mailto:hbfelizzola@gmail.com">hbfelizzola@gmail.com</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
