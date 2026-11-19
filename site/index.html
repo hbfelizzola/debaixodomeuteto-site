@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Debaixo do Meu Teto: inventário da casa, garantia e manutenção</title>
-  <meta name="description" content="App de inventário da casa para iPhone e Android: cadastre seus bens por cômodo com foto e nota fiscal, veja a garantia com os 90 dias do CDC, receba lembretes de manutenção e gere um PDF para o seguro residencial. Sem conta, tudo no celular.">
-  <meta name="keywords" content="inventário da casa, inventário residencial, garantia, nota fiscal, NF-e, manutenção da casa, seguro residencial, boletim de ocorrência, CDC, app">
+  <title>Debaixo do Meu Teto: inventário da casa a partir da nota fiscal</title>
+  <meta name="description" content="App de inventário da casa para iPhone e Android. Compartilhe a nota fiscal ou o e-mail da compra e o app cadastra os itens, calcula a garantia com os 90 dias do CDC, guarda os manuais e lembra da manutenção. Sem conta e sem nuvem.">
+  <meta name="keywords" content="inventário da casa, inventário residencial, garantia, nota fiscal, NF-e, NFC-e, DANFE, XML da nota, manual do produto, manutenção da casa, seguro residencial, boletim de ocorrência, CDC, app">
   <link rel="canonical" href="https://debaixodomeuteto.hbfelizzola.de/">
   <meta name="theme-color" content="#1F7A4D">
   <link rel="icon" href="img/marca.svg" type="image/svg+xml">
@@ -17,7 +17,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Debaixo do Meu Teto">
   <meta property="og:title" content="Debaixo do Meu Teto: o inventário da sua casa, no seu celular">
-  <meta property="og:description" content="Bens por cômodo com foto e nota fiscal, garantia com os 90 dias do CDC, lembretes de manutenção e PDF para o seguro. Sem conta e sem nuvem.">
+  <meta property="og:description" content="Compartilhe a nota fiscal ou o e-mail da compra e o app cadastra os itens, a garantia com os 90 dias do CDC e os manuais. Tudo no celular, sem conta e sem nuvem.">
   <meta property="og:url" content="https://debaixodomeuteto.hbfelizzola.de/">
   <meta property="og:image" content="https://debaixodomeuteto.hbfelizzola.de/img/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -35,12 +35,20 @@
     "operatingSystem": "iOS, Android",
     "applicationCategory": "LifestyleApplication",
     "inLanguage": "pt-BR",
-    "description": "Inventário da casa por cômodo com foto e nota fiscal, garantia com os 90 dias do CDC, lembretes de manutenção e PDF para seguro residencial ou boletim de ocorrência. Os dados ficam só no aparelho.",
+    "description": "Inventário da casa montado a partir da nota fiscal (XML, DANFE, QR code do cupom ou e-mail da loja), com garantia somando os 90 dias do CDC, manuais de cada item, lembretes de manutenção e PDF para seguro residencial ou boletim de ocorrência. Os dados ficam só no aparelho.",
+    "featureList": [
+      "Importar itens do XML ou do PDF da nota fiscal, do e-mail da loja ou do QR code do cupom",
+      "Itens por cômodo com foto, valor e número de série",
+      "Garantia do fabricante somada aos 90 dias do CDC",
+      "Manuais em PDF, foto ou link junto com cada item",
+      "Lembretes de manutenção da casa",
+      "PDF do inventário para seguro residencial ou boletim de ocorrência"
+    ],
     "url": "https://debaixodomeuteto.hbfelizzola.de/",
     "image": "https://debaixodomeuteto.hbfelizzola.de/img/og.jpg",
     "screenshot": [
       "https://debaixodomeuteto.hbfelizzola.de/img/telas/inicio.jpg",
-      "https://debaixodomeuteto.hbfelizzola.de/img/telas/itens.jpg",
+      "https://debaixodomeuteto.hbfelizzola.de/img/telas/importar.jpg",
       "https://debaixodomeuteto.hbfelizzola.de/img/telas/garantia.jpg"
     ]
   }
@@ -51,6 +59,7 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type": "Question", "name": "Preciso criar uma conta?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O app não tem cadastro, login nem servidor. Você abre e começa a usar."}},
+      {"@type": "Question", "name": "O app lê a nota fiscal sozinho?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Compartilhe com o app o XML ou o PDF (DANFE) da nota, o e-mail do pedido ou uma foto do cupom, ou leia o QR code. Ele separa os produtos, o valor, a data e a loja, e você confere antes de salvar. A leitura acontece no próprio celular."}},
       {"@type": "Question", "name": "Como o app calcula a garantia?", "acceptedAnswer": {"@type": "Answer", "text": "Ele soma a garantia do fabricante aos 90 dias da garantia legal do Código de Defesa do Consumidor (arts. 26 e 50). Uma geladeira comprada em 10/10/2025 com 12 meses de garantia fica coberta até 08/01/2027."}},
       {"@type": "Question", "name": "Funciona sem internet?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Tudo é guardado e calculado no próprio celular, inclusive os lembretes."}},
       {"@type": "Question", "name": "E se eu trocar ou perder o celular?", "acceptedAnswer": {"@type": "Answer", "text": "Como os dados ficam só no aparelho, o app não faz cópia na nuvem. Exporte o PDF do inventário de vez em quando e guarde em um lugar seguro."}}
@@ -81,11 +90,12 @@
       <div class="container">
         <div>
           <span class="etiqueta">Para iPhone e Android · feito para o Brasil</span>
-          <h1>O inventário da sua casa, no seu celular.</h1>
+          <h1>Mande a nota fiscal. O app organiza a sua casa.</h1>
           <p class="lead">
-            Cadastre seus bens por cômodo com foto e nota fiscal, saiba até quando vai cada garantia
-            (já com os 90 dias do Código de Defesa do Consumidor) e não esqueça mais a caixa d'água.
-            Sem conta e sem nuvem: tudo fica no aparelho.
+            Compartilhe o XML ou o PDF da nota, o e-mail da loja ou leia o QR code do cupom: o
+            Debaixo do Meu Teto cadastra os itens, mostra até quando vai cada garantia (já com os 90
+            dias do CDC), guarda os manuais e lembra da manutenção. Tudo no seu celular, sem conta e
+            sem nuvem.
           </p>
 
           <!-- TODO(lojas): os links das lojas ainda não existem. Quando o app for publicado,
@@ -106,7 +116,7 @@
 
         <div class="celular">
           <img src="img/telas/inicio.jpg" width="598" height="1300"
-               alt="Tela inicial do app: 9 itens, valor declarado de R$ 21.123,80, manutenções da semana e garantias acabando.">
+               alt="Tela inicial do app: o cartão Minha casa com o valor declarado, os itens na garantia e a próxima manutenção, e os cômodos logo abaixo.">
         </div>
       </div>
     </section>
@@ -114,10 +124,10 @@
     <section class="faixa" aria-label="Em resumo">
       <div class="container">
         <ul>
+          <li><strong>Sem digitar</strong>Os itens vêm da nota fiscal.</li>
           <li><strong>Sem conta</strong>Nada de cadastro, login ou senha.</li>
-          <li><strong>Sem servidor</strong>Seus dados não saem do celular.</li>
-          <li><strong>Funciona offline</strong>Não precisa de internet.</li>
-          <li><strong>Do jeito brasileiro</strong>R$, dd/mm/aaaa, NF-e e CDC.</li>
+          <li><strong>Sem nuvem</strong>Seus dados não saem do celular.</li>
+          <li><strong>Do jeito brasileiro</strong>NF-e, NFC-e, R$ e CDC.</li>
         </ul>
       </div>
     </section>
@@ -127,23 +137,46 @@
         <div class="secao-titulo">
           <h2>Tudo o que mora debaixo do seu teto, organizado.</h2>
           <p>
-            Na hora de acionar a garantia, o seguro ou registrar um boletim de ocorrência, ninguém lembra
-            o número de série da TV nem acha a nota da geladeira. O app guarda isso por você.
+            Quando a TV quebra, a casa é assaltada ou a geladeira para de gelar, ninguém lembra o número de
+            série nem acha a nota. O app guarda tudo isso, e você quase não precisa digitar.
           </p>
         </div>
+
+        <article class="recurso">
+          <div class="recurso-texto">
+            <span class="numero">Importar compras</span>
+            <h3>Da nota fiscal para o inventário, sem digitar</h3>
+            <p>
+              A loja já mandou tudo por e-mail. Compartilhe com o app o XML ou o PDF (DANFE) da nota, o
+              próprio e-mail do pedido ou uma foto do cupom, ou leia o QR code na hora. O app separa os
+              produtos, o valor, a data e a loja; você confere, escolhe o cômodo e salva.
+            </p>
+            <ul>
+              <li>NF-e e NFC-e, em XML, PDF ou QR code.</li>
+              <li>E-mails de pedido de lojas como Mercado Livre e Amazon.</li>
+              <li>A nota fica anexada a cada item que veio dela.</li>
+              <li>A leitura acontece no celular: a nota não vai para servidor nenhum.</li>
+            </ul>
+          </div>
+          <div class="celular">
+            <img src="img/telas/importar.jpg" width="598" height="1300" loading="lazy"
+                 alt="Tela de importação com os produtos lidos de uma nota fiscal, cada um com nome, valor e cômodo, prontos para salvar.">
+          </div>
+        </article>
 
         <article class="recurso">
           <div class="recurso-texto">
             <span class="numero">Itens por cômodo</span>
             <h3>Cada coisa no seu lugar, com foto</h3>
             <p>
-              Sala, cozinha, quarto, área de serviço, garagem… Cadastre cada bem com foto, marca, modelo,
-              número de série, valor pago em reais, data da compra e loja.
+              Sala, cozinha, quarto, área de serviço, garagem… Cada bem tem foto, marca, modelo, número de
+              série, valor pago, data da compra e loja. A tela inicial mostra quanto a casa vale e quantos
+              itens ainda estão na garantia.
             </p>
             <ul>
               <li>Busca por nome, marca ou modelo.</li>
-              <li>Filtro por cômodo e cômodos do seu jeito.</li>
-              <li>Valor total declarado na tela inicial.</li>
+              <li>Cômodos do seu jeito, com filtro em um toque.</li>
+              <li>Cadastro à mão também, para o que não tem nota.</li>
             </ul>
           </div>
           <div class="celular">
@@ -166,13 +199,33 @@
               o fabricante cobre até 10/10/2026, e com o CDC você está coberto até <b>08/01/2027</b>.
             </div>
             <ul>
-              <li>Foto da nota fiscal ou do cupom.</li>
-              <li>Chave de acesso da NF-e com conferência do dígito verificador.</li>
+              <li>Nota em PDF, XML ou foto, sempre junto do item.</li>
+              <li>Chave de acesso da NF-e conferida pelo dígito verificador.</li>
             </ul>
           </div>
           <div class="celular">
             <img src="img/telas/garantia.jpg" width="598" height="1300" loading="lazy"
-                 alt="Detalhe de uma geladeira: garantia do fabricante até 10/10/2026, com os 90 dias do CDC até 08/01/2027, e a chave de acesso da NF-e.">
+                 alt="Detalhe de uma geladeira: garantia do fabricante até 12/10/2026, com os 90 dias do CDC até 10/01/2027, e a chave de acesso da NF-e.">
+          </div>
+        </article>
+
+        <article class="recurso">
+          <div class="recurso-texto">
+            <span class="numero">Manuais</span>
+            <h3>O manual certo, na hora em que você precisa</h3>
+            <p>
+              Guarde o manual em PDF, fotos das páginas ou o link do fabricante junto com cada item. Não
+              tem o manual? O botão <em>Buscar manual</em> abre a pesquisa com a marca e o modelo no seu
+              navegador; é só baixar o PDF e anexar.
+            </p>
+            <ul>
+              <li>Como trocar o filtro, resetar o ar-condicionado, programar o forno.</li>
+              <li>Tudo fica no celular e abre mesmo sem internet.</li>
+            </ul>
+          </div>
+          <div class="celular">
+            <img src="img/telas/manuais.jpg" width="598" height="1300" loading="lazy"
+                 alt="Seção Manuais de um item, com o manual em PDF, fotos de um guia rápido, um link do fabricante e o botão Buscar manual.">
           </div>
         </article>
 
@@ -226,8 +279,9 @@
           <div>
             <h2>Seus dados não saem do celular.</h2>
             <p>
-              O Debaixo do Meu Teto não tem conta, servidor, anúncios nem rastreamento. O inventário,
-              as fotos e as notas ficam guardados no próprio aparelho, e só você decide se e com quem
+              O Debaixo do Meu Teto não tem conta, servidor, anúncios nem rastreamento. Até a leitura
+              das notas fiscais e dos e-mails de compra acontece no próprio aparelho. O inventário, as
+              fotos, as notas e os manuais ficam guardados no celular, e só você decide se e com quem
               compartilhar o PDF.
             </p>
             <p class="nota">
@@ -236,7 +290,8 @@
             </p>
           </div>
           <ul>
-            <li><strong>Câmera e fotos</strong> só para anexar imagens dos itens e das notas.</li>
+            <li><strong>Notas e e-mails</strong> que você compartilha são lidos no celular, sem passar por servidor.</li>
+            <li><strong>Câmera e fotos</strong> só para anexar imagens e ler o QR code do cupom.</li>
             <li><strong>Notificações</strong> são lembretes locais, agendados no próprio aparelho.</li>
             <li><strong>Nenhum dado coletado</strong> pelo desenvolvedor ou por terceiros.</li>
           </ul>
@@ -263,8 +318,25 @@
         <details>
           <summary>O app lê a nota fiscal sozinho?</summary>
           <p>
-            Você fotografa a nota ou o cupom e digita (ou cola) a chave de acesso de 44 dígitos da NF-e. O app
-            confere o dígito verificador e avisa se algum número foi digitado errado.
+            Sim. No e-mail da loja, toque no anexo da nota (XML ou PDF) e compartilhe com o Debaixo do Meu Teto.
+            Também dá para compartilhar o próprio e-mail do pedido, uma foto do cupom, ou ler o QR code com a
+            câmera. O app separa os produtos, o valor, a data e a loja, e você confere tudo antes de salvar. Se a
+            nota for só uma imagem sem texto, você completa à mão.
+          </p>
+        </details>
+        <details>
+          <summary>Meus e-mails e notas vão para algum servidor?</summary>
+          <p>
+            Não. O app não tem servidor: o arquivo que você compartilha é lido no próprio celular e guardado
+            junto com os itens. O app nem pede acesso à sua caixa de e-mail; você escolhe o que compartilhar.
+          </p>
+        </details>
+        <details>
+          <summary>Como encontro o manual de um item?</summary>
+          <p>
+            Na tela do item, toque em <em>Buscar manual</em>. O navegador abre uma pesquisa com a marca e o
+            modelo; baixe o PDF e anexe em <em>Manuais</em>. Você também pode salvar o link do site do fabricante
+            ou fotografar o manual impresso.
           </p>
         </details>
         <details>
@@ -291,8 +363,8 @@
 
     <section class="secao chamada" style="padding-top: 0">
       <div class="container">
-        <h2>Comece pelo que mais vale.</h2>
-        <p>Geladeira, TV, notebook: cadastre com foto e nota fiscal e fique tranquilo.</p>
+        <h2>Comece pela última compra.</h2>
+        <p>Abra o e-mail da loja, compartilhe a nota e veja a sua casa se organizar.</p>
         <!-- TODO(lojas): mesmos links do topo da página. -->
         <div class="lojas">
           <a class="selo-loja" href="#" aria-disabled="true" data-loja="app-store" title="Em breve na App Store">
